@@ -10,12 +10,12 @@ interface CareerItem {
 
 const teachingData: CareerItem[] = [
   { year: '2023', title: '教職課程開始', description: '大学2年次に教職課程を開始し、教育の基礎理論を学ぶ' },
-  { year: '2025', title: '教育実習', description: '中学校での4週間の教育実習を完了' },
-  { year: '2026', title: '教員免許取得', description: '中学校教諭一種免許状（情報）を取得' },
+  { year: '2024', title: 'skillup-next アルバイト', description: '共通テストの模試の問題作成に携わる' },
+  { year: '2026', title: '教員免許取得（予定）', description: '中学校教諭一種免許状（数学）、高等学校教諭一種免許状（数学、情報）を取得' },
 ];
 
 const frontendData: CareerItem[] = [
-  { year: '2022', title: 'eyes,Japan アルバイト', description: 'ホームページのフロントエンド開発（チーム開発）' },
+  { year: '2022', title: 'eyes,Japan アルバイト', description: 'ホームページのフロントエンド開発（一年間のチーム開発）' },
   { year: '2023', title: 'Artrium サイト制作', description: 'Studio を使ってハンドメイドのサイト Artrium を4ヶ月かけて作成' },
   { year: '2024', title: '見る用語集：情報 開発', description: 'React, Node.js, Firebase を使用して開発' },
 ];
@@ -23,7 +23,6 @@ const frontendData: CareerItem[] = [
 const researchData: CareerItem[] = [
   { year: '2022', title: '会津大学入学', description: '大学1年生として入学' },
   { year: '2024', title: '研究室配属', description: '深層学習や LiDAR、SLAM などを使った身の回りの手伝いをするロボット開発の研究を開始' },
-  { year: '2024', title: 'skillup-next プロジェクト', description: '共通テストの問題作成に携わる' },
 ];
 
 const useInView = (options: IntersectionObserverInit) => {
@@ -34,19 +33,23 @@ const useInView = (options: IntersectionObserverInit) => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         controls.start('visible');
+      } else {
+        controls.start('hidden'); 
       }
     }, options);
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
-  }, [ref, options, controls]);
+  }, [options, controls]);
 
   return [ref, controls] as const;
 };
@@ -121,7 +124,7 @@ export default function CareerTimelineComponent() {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-12 text-center text-primary">キャリアタイムライン</h1>
+        <h1 className="text-4xl font-bold mb-12 text-center text-primary">Career Timeline</h1>
         <div className="flex flex-col md:flex-row gap-8">
           <CareerTimeline data={teachingData} icon={<Book />} title="教職経験" bgColor="bg-green-100" />
           <CareerTimeline data={frontendData} icon={<Code />} title="フロントエンド経験" bgColor="bg-green-200" />
