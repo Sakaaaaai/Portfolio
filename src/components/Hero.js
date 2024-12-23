@@ -26,13 +26,15 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1 }}
           className="mb-8"
         >
-          <img
-            src="/image1.jpg"
-            alt="Frog character"
-            width={200}
-            height={200}
-            className="mx-auto"
-          />
+
+        <img
+        src="/image1.jpg"
+        alt="Frog character"
+        width={200}
+        height={200}
+        className="mx-auto rounded-full shadow-lg"
+        />
+
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
