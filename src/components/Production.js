@@ -21,7 +21,7 @@ const experienceData = [
   {
     id: 2,
     year: '2024',
-    title: '見る用語集：情報（開発中）',
+    title: 'Quick Info Glossary',
     description: '高校の情報の用語を視覚的に理解できるサイト',
     skills: ['React', 'Firebase'],
     icon: <Code className="w-6 h-6" />,
