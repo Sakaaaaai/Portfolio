@@ -3,17 +3,17 @@ import { Code, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const programmingSkills = [
-  { 
+  {
     id: 1,
-    name: "Python",
+    name: "Three.js",
     level: 7,
     icon: <Code className="w-6 h-6" />,
-    description: "研究でCNNモデルの構築やRaspberry Piの操作に使用。",
-    details: "Pythonは主に研究目的で使用しており、1年間にわたりCNNモデルの実装やRaspberry Piの制御プログラムを作成しました。これにより、機械学習やハードウェア操作の経験を深めました。",
-    projects: ["CNNモデルの作成", "Raspberry Piを用いた実験用システム"],
-    learningResources: ["公式ドキュメント", "YouTubeのチュートリアル"]
+    description: "3Dグラフィックスを用いた没入感のあるWeb体験の構築。",
+    details: "Three.jsを使用して、Webブラウザ上で動作する3D空間の構築やアニメーションの実装を行っています。ポートフォリオサイトでの演出や、インタラクティブなデータビジュアライゼーションに活用しています。",
+    projects: ["ポートフォリオの3D演出", "3Dモデルビューアー"],
+    learningResources: ["Three.js Journey", "公式ドキュメント", "Three.js Fundamentals"]
   },
-  { 
+  {
     id: 2,
     name: "JavaScript",
     level: 8,
@@ -23,7 +23,7 @@ const programmingSkills = [
     projects: ["温泉旅館のWebサイト作成", "社内用割り当てプログラム"],
     learningResources: ["JavaScriptチュートリアル", "初心者向け動画教材"]
   },
-  { 
+  {
     id: 3,
     name: "React",
     level: 6,
@@ -33,10 +33,10 @@ const programmingSkills = [
     projects: ["用語集作成プロジェクト"],
     learningResources: ["React公式ドキュメント", "Reactに関するYouTubeチュートリアル", "オンラインReact講座"]
   },
-  { 
+  {
     id: 4,
     name: "TypeScript",
-    level: 4,
+    level: 8,
     icon: <Code className="w-6 h-6" />,
     description: "Reactで用語集を作成する際に使用。",
     details: "ReactプロジェクトでTypeScriptを使用し、静的型付けの重要性と便利さを学びました。インターフェースや型定義を使ったコードの信頼性向上に取り組みました。",
@@ -51,13 +51,15 @@ const GaugeProgress = ({ value, maxValue = 10 }) => {
     <div className="relative w-32 h-20">
       <svg className="w-full h-full" viewBox="0 0 100 50">
         <path d="M5 50 A45 45 0 0 1 95 50" fill="none" stroke="#e5e7eb" strokeWidth="10" />
-        <path
-          d={`M5 50 A45 45 0 0 1 95 50`}
+        <motion.path
+          d="M5 50 A45 45 0 0 1 95 50"
           fill="none"
           stroke="#1f8e3d"
           strokeWidth="10"
           strokeLinecap="round"
-          strokeDasharray={`${(value / maxValue) * 141.37} 141.37`}
+          initial={{ pathLength: 0 }}
+          whileInView={{ pathLength: value / maxValue }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
         />
       </svg>
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-lg font-semibold">
@@ -67,9 +69,10 @@ const GaugeProgress = ({ value, maxValue = 10 }) => {
   )
 }
 
-const SkillCard = ({ skill, onClick }) => {
+const SkillCard = ({ skill, onClick, variants }) => {
   return (
     <motion.div
+      variants={variants}
       className="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.3 }}
@@ -149,21 +152,42 @@ export default function Skills() {
     setSelectedSkill(null)
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-green-200">
+    <section id="skills" className="min-h-screen flex items-center justify-center bg-green-200">
       <div className="container mx-auto px-6 py-12">
-        <motion.h2 
+        <motion.h2
           className="text-4xl font-bold mb-12 text-center text-gray-800"
           initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Programming Skills
         </motion.h2>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {programmingSkills.map((skill) => (
@@ -171,6 +195,7 @@ export default function Skills() {
               key={skill.id}
               skill={skill}
               onClick={handleSkillClick}
+              variants={itemVariants}
             />
           ))}
         </motion.div>

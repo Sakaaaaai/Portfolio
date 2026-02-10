@@ -7,12 +7,14 @@ const experienceData = [
     id: 1,
     year: '2023',
     title: '英会話塾のサイト',
-    description: '英会話塾のサイトの制作と運用',
+    description: '英会話塾のサイトの制作',
     skills: ['Studio', 'UI/UX Design'],
     icon: <Monitor className="w-6 h-6" />,
-    details: '本プロジェクトでは、バイト先の英会話塾の公式WebサイトをStudioを使用して制作しました。要件定義からデザイン案まで一人で考案し、塾との打ち合わせを通じて、英語と日本語に対応したレスポンシブデザインのWebサイトを完成させました。',
+    details: '本プロジェクトでは、バイト先の英会話塾の公式WebサイトをStudioを使用して制作しました。要件定義からデザイン案まで一人で考案し、塾との打ち合わせを通じてレスポンシブデザインのWebサイトを完成させました。',
     achievements: [
       '複数のブラウザ対応のレスポンシブデザインを実装',
+      '話を伺いながら要件定義',
+      '英会話塾のテーマカラーを使った子供らしいデザイン'
     ],
     teamSize: 1,
     duration: '3ヶ月',
@@ -25,51 +27,66 @@ const experienceData = [
     description: '高校の情報の用語を視覚的に理解できるサイト',
     skills: ['React', 'Firebase'],
     icon: <Code className="w-6 h-6" />,
-    details: '教育現場での情報授業に格差があることを知り、高校生が自主的に情報学習を行えるサイトを制作しました。このサイトでは、学習意欲の高い高校生が主体的に情報の基礎知識を身に付けられるよう、分かりやすいコンテンツと使いやすいデザインを重視しています。',
+    details: '教育現場での情報授業に格差があることを知り、高校生が自主的に共通テスト情報Ⅰの学習を行えるサイトを制作しました。このサイトでは、学習意欲の高い高校生が主体的に情報の基礎知識を身に付けられるよう、分かりやすいコンテンツと使いやすいデザインを重視しています。',
     achievements: [
       'ログイン機能: Firebaseを使用し、ユーザーの学習進捗を保存できるようにしました。',
-      '視覚的な説明: 図解やイラストを使用し、複雑な情報を視覚的にわかりやすく解説しました。',
+      '視覚的な説明: それぞれの用語にデモを付けることで複雑な情報を視覚的にわかりやすく解説しました。',
       '直感的なデザイン: シンプルでわかりやすいインターフェースを採用し、情報に素早くアクセスできるようにしました。',
       'クイズ機能: 学習内容を確認できるクイズを通じて知識の定着をサポートしました。'
     ],
-    teamSize: 2,
-    duration: '２か月',
-    link: 'https://visualwordbook-20b08.web.app/', 
+    teamSize: 1,
+    duration: '4か月',
+    link: 'https://visualwordbook-20b08.web.app/',
   },
   {
     id: 3,
-    year: '2023',
-    title: 'Artrium',
-    description: 'ハンドメイドのこだわりを紹介するWebサイト',
-    skills: ['Studio', 'UI/UX Design'],
-    icon: <Monitor className="w-6 h-6" />,
-    details: '本プロジェクトは、Studioを利用して、ハンドメイドのこだわりを伝えるためのWebサイトを制作しました。約20名のハンドメイド作家との密なコミュニケーションを通じて、各作家の独自性や魅力を引き出すサイトデザインを行いました。',
-    achievements: [
-      'セッション数が427(一か月間）',
-      'PV数が555(一か月間）',
-      '20名以上のハンドメイド作家さんのデザイン制作'
-    ],
-    teamSize: 2,
-    duration: '4ヶ月',
-    link: 'https://artrium-handmade.com/', 
-  },
-  {
-    id: 4,
     year: '2024',
     title: 'ポートフォリオサイト',
     description: '自分のこれまでの経験や制作物を理解してもらうためのサイト',
-    skills: ['React', 'Node.js', 'Firebase', 'TypeScript'],
+    skills: ['React', 'Firebase', 'TypeScript'],
     icon: <Code className="w-6 h-6" />,
-    details: 'このポートフォリオサイトは、「Life is what you make it」というテーマのもと、自分のこれまでの経験や制作物を理解してもらうために作成しました。自分の好きな色である緑をテーマカラーに採用し、温かみと親しみやすさを表現しています。サイトには制作物や活動のタイムラインを掲載し、これまでの成長や成果を訪問者に伝えられるよう工夫しています。',
+    details: 'このポートフォリオサイトは、「Life is what you make it」というテーマのもと、自分のこれまでの経験や制作物を理解してもらうために作成しました。自分の好きな色である緑をテーマカラーに採用しています。サイトには制作物や活動のタイムラインを掲載し、これまでの成長や成果を訪問者に伝えられるよう工夫しています。',
     achievements: [
       '動きのあるデザイン：遊び心のあるアニメーションで、訪問者が楽しめるインタラクティブな体験を提供。',
       '広がりを感じさせるヘッターデザイン：透明度とぼかし効果で画面に広がりを与え、自然な一体感を実現。',
-      '緑を基調としたテーマカラー：落ち着きと安心感のある配色で、快適な閲覧体験をサポート。'
     ],
     teamSize: 1,
-    duration: '二週間',
-    link: 'https://portfolio-9a436.web.app/', 
-  }
+    duration: '2週間',
+    link: 'https://portfolio-9a436.web.app/',
+  },
+  {
+    id: 4,
+    year: '2025',
+    title: 'QuickProfMail',
+    description: '教授とのメールを円滑にするAI自動生成・テンプレート管理ツール',
+    skills: ['Next.js', 'Firebase', 'Gemini API', 'AI'],
+    icon: <Code className="w-6 h-6" />,
+    details: '研究室内での教授とのメールを円滑にしたいという思いと、AIを利用したサイトを作りたいと思いこのサイトを作成しました。このサイトはGeminiのAPIを利用することでメール自動生成機能を実装しています。',
+    achievements: [
+      'メール自動生成: Gemini API を活用し、内容に応じた丁寧なメール文面を即座に生成。',
+      'テンプレート機能: よく送るメールのテンプレートを保存し、変数を設定することで再利用性を向上。',
+      '研究室コミュニケーションの効率化: 定型的な報告や相談のメール作成時間を大幅に短縮。',
+    ],
+    teamSize: 1,
+    duration: '3週間',
+    link: 'https://quickprofmail.web.app/',
+  },
+  {
+    id: 5,
+    year: '2026',
+    title: '研究室のホームページ(制作中)',
+    description: '所属研究室の公式サイト（現在制作中）',
+    skills: ['Next.js', 'Firebase', 'Tailwind CSS'],
+    icon: <Monitor className="w-6 h-6" />,
+    details: '研究室の活動内容や研究成果を対外的に発信するための公式サイトを制作しています。最新のフレームワークを用い、管理のしやすさとデザイン性を両立させています。',
+    achievements: [
+      'レスポンシブデザイン: PC・スマホ両面できれいに表示される構成。',
+      '制作中: 順次コンテンツを拡充し、公開に向けて開発を継続中。',
+    ],
+    teamSize: 1,
+    duration: '継続中',
+    link: 'https://saitolab-ebb6d.web.app/',
+  },
 ];
 
 const useInView = (options) => {
@@ -228,9 +245,9 @@ function Production() {
   };
 
   const itemVariants = {
-    hidden: { 
-      y: 20, 
-      opacity: 0, 
+    hidden: {
+      y: 20,
+      opacity: 0,
       rotate: 10
     },
     visible: {

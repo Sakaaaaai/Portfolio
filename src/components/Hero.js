@@ -27,13 +27,13 @@ export default function Hero() {
           className="mb-8"
         >
 
-        <img
-        src="/image1.jpg"
-        alt="Frog character"
-        width={200}
-        height={200}
-        className="mx-auto rounded-full shadow-lg"
-        />
+          <img
+            src="/image1.jpg"
+            alt="Frog character"
+            width={200}
+            height={200}
+            className="mx-auto rounded-full shadow-lg"
+          />
 
         </motion.div>
         <motion.h1
@@ -50,7 +50,7 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 1 }}
           className="text-xl mb-8 text-white"
         >
-          <strong>教育者 / フロントエンド開発者 / 研究者</strong>
+          <strong>フロントエンド開発者</strong>
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}

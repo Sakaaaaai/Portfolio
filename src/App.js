@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CareerTimeline from './components/CareerTimeline.tsx';
-import Production from './components/production';
+import Production from './components/Production';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 
@@ -47,13 +47,6 @@ export default function Portfolio() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (activeSection === 'home') heroRef.current.scrollIntoView({ behavior: 'smooth' });
-    if (activeSection === 'timeline') timelineRef.current.scrollIntoView({ behavior: 'smooth' });
-    if (activeSection === 'production') productionRef.current.scrollIntoView({ behavior: 'smooth' });
-    if (activeSection === 'skills') skillsRef.current.scrollIntoView({ behavior: 'smooth' });
-    if (activeSection === 'contact') contactRef.current.scrollIntoView({ behavior: 'smooth' });
-  }, [activeSection]);
 
   return (
     <div className="bg-background text-foreground">
